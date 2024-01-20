@@ -1,11 +1,13 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 //constants
-const uri =
-  "mongodb+srv://kattachaithanyak:erX581obQYNRxyD0@cluster0.tv9c6c7.mongodb.net/items-collection?retryWrites=true&w=majority";
-const PORT = 3000;
+const uri = process.env.URI;
+const PORT = process.env.PORT || 3000;
 
 //import routes
 import itemRoute from "./Routes/itemRoute.js";
